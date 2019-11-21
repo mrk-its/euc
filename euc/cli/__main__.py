@@ -3,6 +3,7 @@ import ravel
 import asyncio
 import euc.device
 
+
 async def run_cli(system_bus):
     devices = await euc.device.list(system_bus)
     print("detected devices:", devices)
@@ -15,7 +16,7 @@ async def run_cli(system_bus):
 
 
 if __name__ == "__main__":
-    logging.basicConfig(level=logging.INFO)
+    logging.basicConfig(level=logging.DEBUG)
     system_bus = ravel.system_bus()
     loop = asyncio.get_event_loop()
     system_bus.attach_asyncio(loop)
