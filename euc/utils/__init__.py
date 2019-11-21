@@ -6,9 +6,9 @@ logger = logging.getLogger(__name__)
 _tasks = []
 
 
-def _cleanup_task_cb(self, task):
+def _cleanup_task_cb(task):
     logger.debug("cleanup task %r", task)
-    self._tasks.remove(task)
+    _tasks.remove(task)
 
 
 def create_task(coro, loop=None):
